@@ -38,6 +38,14 @@ package
 			var loader:Loader = new Loader();
 			loader.contentLoaderInfo.addEventListener(ProgressEvent.PROGRESS, loadProgress);
 
+			var _cnt:LoaderContext = new LoaderContext(true);
+			_cnt.checkPolicyFile = false;
+			
+			//******************************************************88
+			//_cnt.securityDomain = SecurityDomain.currentDomain;
+			//********************************************************888
+			_cnt.applicationDomain = ApplicationDomain.currentDomain;
+			
 			function loadProgress(event:ProgressEvent):void 
 			{
 				var percentLoaded:Number = event.bytesLoaded / event.bytesTotal;
@@ -46,7 +54,7 @@ package
 				text_percent.text = 'Загрузка: ' + String(uint(percentLoaded)) + "%";
 			}
 			
-			loader.load(request);
+			loader.load(request,_cnt);
 			this.addChild(loader);
 		}
 		
