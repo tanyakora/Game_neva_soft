@@ -18,13 +18,13 @@ package view.mediators
 		
 		private var bang_particle_loader:ImageLoader;
 		
-		private const count_first_particle : int = 10;
+		private const count_first_particle : int = 60;
 		
-		private const count_second_particle :int = 5;
+		private const count_second_particle :int = 30;
 		
 		private const radius_first :int = 100;
 		
-		private const radius_second:int = 200;
+		private const radius_second:int = 100;
 		
 		public function BangParticleMediator( _container:MovieClip)
 		{
